@@ -5,12 +5,14 @@ require 'reverse_markdown'
 
 module DevtoPublisher
   class Error < StandardError; end
+
   class ConfigError < Error; end
+
   class APIError < Error; end
 
   class Client
     DEVTO_API_URL = 'https://dev.to/api/articles'.freeze
-    ORGANIZATION_ID = 2669
+    ORGANIZATION_ID = ENV['DEVTO_ORGANIZATION_ID']
 
     def initialize(api_key = ENV['DEVTO_API_KEY'])
       raise ConfigError, 'API key is required' if api_key.nil? || api_key.empty?
@@ -19,7 +21,6 @@ module DevtoPublisher
 
     def create_article(article_data)
       response = make_request(prepare_article_data(article_data))
-      puts response.body
       handle_response(response)
     end
 
@@ -31,7 +32,7 @@ module DevtoPublisher
           title: article_data.fetch('title'),
           body_markdown: get_markdown_content(article_data),
           published: false,
-          tags: article_data['tags']&.map {|tag| tag.gsub(/[^\p{Alnum}]/, '')},
+          tags: article_data['tags']&.map { |tag| tag.gsub(/[^\p{Alnum}]/, '') },
           organization_id: ORGANIZATION_ID,
           description: article_data['metadescription'],
           main_image: article_data['thumbnail']

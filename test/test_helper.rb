@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require 'minitest/pride' unless ENV['RM_INFO']
 require 'webmock/minitest'
 require_relative '../lib/devto_publisher'
 

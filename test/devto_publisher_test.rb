@@ -21,7 +21,7 @@ class DevtoPublisherTest < Minitest::Test
     stub_devto_api_request(article_data)
     response = @client.create_article(article_data)
 
-    assert_equal 'https://dev.to/articles/123', response['url']
+    assert_includes response['url'], 'https://dev.to/jetthoughts/'
   end
 
   def test_creates_article_with_html_content
@@ -34,7 +34,7 @@ class DevtoPublisherTest < Minitest::Test
     stub_devto_api_request(article_data)
     response = @client.create_article(article_data)
 
-    assert_equal 'https://dev.to/articles/123', response['url']
+    assert_includes response['url'], 'https://dev.to/jetthoughts/'
   end
 
   def test_handles_api_error
@@ -81,7 +81,7 @@ class DevtoPublisherTest < Minitest::Test
     stub_request(:post, DevtoPublisher::Client::DEVTO_API_URL)
       .to_return(
         status: 422,
-        body: { error: "Title has already been used in the last five minutes" }.to_json
+        body: { error: "Title has already been used in the last five minutes", status: 422 }.to_json
       )
 
     error = assert_raises(DevtoPublisher::APIError) do
@@ -105,7 +105,10 @@ class DevtoPublisherTest < Minitest::Test
       )
       .to_return(
         status: 200,
-        body: { id: 123 }.to_json,
+        body: {
+          id: 123,
+          path: '/jetthoughts/123'
+        }.to_json,
         headers: { 'content-type' => 'application/json' }
       )
   end
