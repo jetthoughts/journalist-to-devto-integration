@@ -9,7 +9,6 @@ gem 'dotenv', '~> 2.8'
 
 group :test do
   gem 'minitest', '~> 5.18'
-  gem 'minitest-reporters'
   gem 'webmock', '~> 3.18'
   gem 'rake', '~> 13.0'
 end
