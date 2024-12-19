@@ -1,0 +1,15 @@
+{
+  "id": "12345",
+  "title": "New file",
+  "content": "<h2>example</h2><p>This is a sample content for demonstration purposes</p>",
+  "content_markdown": "## example\nThis is a sample content for demonstration purposes",
+  "tags": [
+    "my-tag-123",
+    "another tag"
+  ],
+  "thumbnail": "https://jetthoughts.com/img/no-image.6d39795bcf30f972f21159038c3852371104a0bb633c314791f35de6d587bb99.svg",
+  "thumbnail_alt_text": "Sample thumbnail description",
+  "metadescription": "This is a sample meta description for SEO purposes.",
+  "keyword_seed": "focus keyword",
+  "language_code": "en"
+}

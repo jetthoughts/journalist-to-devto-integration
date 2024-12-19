@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+Bundler.require
+
+require_relative '../lib/devto_publisher'
+
+def main
+  input_file = ARGV[0] || 'test/fixtures/article.json'
+
+  unless File.exist?(input_file)
+    puts "Error: File #{input_file} not found"
+    exit 1
+  end
+
+  article_data = JSON.parse(File.read(input_file))
+  client = DevtoPublisher::Client.new
+
+  begin
+    result = client.create_article(article_data)
+    puts "Article successfully created!"
+    puts "URL: #{result['url']}"
+  rescue DevtoPublisher::Error => e
+    puts "Error: #{e.message}"
+    exit 1
+  end
+end
+
+main if __FILE__ == $0

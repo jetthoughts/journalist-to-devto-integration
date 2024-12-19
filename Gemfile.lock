@@ -1,0 +1,63 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
+    bigdecimal (3.1.8)
+    crack (1.0.0)
+      bigdecimal
+      rexml
+    dotenv (2.8.1)
+    hashdiff (1.1.2)
+    json (2.9.0)
+    minitest (5.25.4)
+    nio4r (2.7.4)
+    nokogiri (1.17.2-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.17.2-arm-linux)
+      racc (~> 1.4)
+    nokogiri (1.17.2-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.17.2-x86-linux)
+      racc (~> 1.4)
+    nokogiri (1.17.2-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.17.2-x86_64-linux)
+      racc (~> 1.4)
+    public_suffix (6.0.1)
+    puma (6.5.0)
+      nio4r (~> 2.0)
+    racc (1.8.1)
+    rack (3.1.8)
+    rackup (2.2.1)
+      rack (>= 3)
+    rake (13.2.1)
+    reverse_markdown (2.1.1)
+      nokogiri
+    rexml (3.4.0)
+    webmock (3.24.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+
+PLATFORMS
+  aarch64-linux
+  arm-linux
+  arm64-darwin
+  x86-linux
+  x86_64-darwin
+  x86_64-linux
+
+DEPENDENCIES
+  dotenv (~> 2.8)
+  json (~> 2.6)
+  minitest (~> 5.18)
+  puma (~> 6.0)
+  rack (~> 3.0)
+  rackup
+  rake (~> 13.0)
+  reverse_markdown (~> 2.1)
+  webmock (~> 3.18)
+
+BUNDLED WITH
+   2.6.1
