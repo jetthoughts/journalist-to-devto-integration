@@ -9,7 +9,6 @@ GEM
       rexml
     dotenv (2.8.1)
     hashdiff (1.1.2)
-    json (2.9.0)
     minitest (5.25.4)
     nio4r (2.7.4)
     nokogiri (1.17.2-aarch64-linux)
@@ -24,6 +23,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
+    oj (3.16.8)
+      bigdecimal (>= 3.0)
+      ostruct (>= 0.2)
+    ostruct (0.6.1)
     public_suffix (6.0.1)
     puma (6.5.0)
       nio4r (~> 2.0)
@@ -50,13 +53,13 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv (~> 2.8)
-  json (~> 2.6)
   minitest (~> 5.18)
-  puma (~> 6.0)
+  oj
+  puma
   rack (~> 3.0)
   rackup
   rake (~> 13.0)
-  reverse_markdown (~> 2.1)
+  reverse_markdown
   webmock (~> 3.18)
 
 BUNDLED WITH

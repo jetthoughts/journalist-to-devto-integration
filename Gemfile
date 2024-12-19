@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rack', '~> 3.0'
-gem 'puma', '~> 6.0'  # Added Puma server
-gem 'json', '~> 2.6'
-gem 'reverse_markdown', '~> 2.1'
+gem 'puma'
+gem 'oj'
+gem 'reverse_markdown', require: false
 gem 'rackup'
 gem 'dotenv', '~> 2.8'
 
