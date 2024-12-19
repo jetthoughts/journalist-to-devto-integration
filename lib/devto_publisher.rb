@@ -30,7 +30,7 @@ module DevtoPublisher
         article: {
           title: article_data.fetch('title'),
           body_markdown: get_markdown_content(article_data),
-          published: false,
+          published: true,
           tags: article_data['tags']&.map { |tag| tag.gsub(/[^\p{Alnum}]/, '') },
           organization_id: ORGANIZATION_ID,
           description: article_data['metadescription'],
